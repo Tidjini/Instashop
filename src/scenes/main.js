@@ -1,15 +1,18 @@
 import React, { Component } from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+
 import Header from "../components/common/Header";
+import BigCard from "../components/bigCard";
+import SmallCard from "../components/smallCard";
 
 const {
   SCREEN_WIDTH,
   SCREEN_HEIGHT,
-  CARD_WIDTH_BIG,
-  CARD_HEIGHT_BIG
+
+  IMAGES
 } = require("../../Utils/const");
-const image = require("../../assets/images/item-01.png");
+
 const colors = {
   juneBad: "#C5D86D",
   jungleGreen: "#1B998B",
@@ -33,54 +36,47 @@ export default class Main extends Component {
           secondaryText="Salam Tidjini"
           iconName="search"
         />
-
-        <View
-          style={{
-            height: CARD_HEIGHT_BIG,
-            width: CARD_WIDTH_BIG,
-            backgroundColor: "#ccc",
-            alignSelf: "center",
-            borderRadius: 10,
-            position: "relative"
-          }}
-        >
-          <Image
-            source={image}
-            style={{
-              height: CARD_HEIGHT_BIG,
-              width: CARD_WIDTH_BIG,
-              resizeMode: "cover",
-              borderRadius: 10
-            }}
+        <ScrollView style={{ marginVertical: 5 }}>
+          <BigCard
+            imageUri={IMAGES[0]}
+            option={"Special"}
+            specialColor={colors.orange}
+            mainText={"50% off on sunglasses"}
+            discoverText={"Discover sunglasses >"}
           />
-          <Text
-            style={{
-              position: "absolute",
-              paddingVertical: 5,
-              paddingHorizontal: 7,
-              borderRadius: 5,
-              margin: 16,
-              fontSize: 12,
-              fontWeight: "bold",
-              color: "#FFF",
-              backgroundColor: colors.orange
-            }}
-          >
-            Special
-          </Text>
+          <SmallCard
+            imageUri={IMAGES[2]}
+            option="Summwat"
+            optionColor={colors.spaceCadet}
+            mainTitle={"Summer Sale"}
+            itemsIncluded="24 items included"
+            offer="Limited offer"
+          />
 
-          <LinearGradient
-            colors={["#00000000", "#000000DD", "#000000"]}
-            style={{
-              width: CARD_WIDTH_BIG,
-              height: CARD_HEIGHT_BIG / 2,
-              position: "absolute",
-              bottom: 0
-            }}
-          >
-            <Text>50% off on sunglasses</Text>
-          </LinearGradient>
-        </View>
+          <SmallCard
+            imageUri={IMAGES[3]}
+            option="Spinwat"
+            optionColor={colors.jungleGreen}
+            mainTitle={"Spring Sale"}
+            itemsIncluded="5 items included"
+            offer="Limited offer"
+          />
+          <BigCard
+            imageUri={IMAGES[2]}
+            option={"Special"}
+            specialColor={colors.orange}
+            mainText={"50% off on sunglasses"}
+            discoverText={"Discover sunglasses >"}
+          />
+          <SmallCard
+            imageUri={IMAGES[1]}
+            option="Spinwat"
+            optionColor={colors.jungleGreen}
+            mainTitle={"Spring Sale"}
+            itemsIncluded="5 items included"
+            offer="Limited offer"
+          />
+        </ScrollView>
       </View>
     );
   }
