@@ -1,17 +1,11 @@
 import React, { Component } from "react";
-import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
+import { View, ScrollView } from "react-native";
 
 import Header from "../components/common/Header";
 import BigCard from "../components/bigCard";
 import SmallCard from "../components/smallCard";
 
-const {
-  SCREEN_WIDTH,
-  SCREEN_HEIGHT,
-
-  IMAGES
-} = require("../../Utils/const");
+const { SCREEN_WIDTH, SCREEN_HEIGHT, IMAGES } = require("../../Utils/const");
 
 const colors = {
   juneBad: "#C5D86D",

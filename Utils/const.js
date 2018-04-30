@@ -8,6 +8,10 @@ const CARD_HEIGHT_BIG = SCREEN_HEIGHT / 2;
 const CARD_WIDTH_SMALL = CARD_WIDTH_BIG;
 const CARD_HEIGHT_SMALL = CARD_HEIGHT_BIG / 2;
 
+const PRODUCT_CARD_WIDTH = SCREEN_WIDTH/ 2 - 50;
+const PRODUCT_CARD_HEIGHT = SCREEN_HEIGHT / 3,
+
+
 const IMAGES = [
   require("../assets/images/item-01.png"),
   require("../assets/images/item-02.png"),
@@ -21,5 +25,7 @@ export {
   CARD_HEIGHT_BIG,
   CARD_WIDTH_SMALL,
   CARD_HEIGHT_SMALL,
+  PRODUCT_CARD_HEIGHT,
+  PRODUCT_CARD_WIDTH
   IMAGES
 };

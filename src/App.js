@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Main from "./scenes/main";
+import ProducList from "./scenes/productList";
 
 export default class App extends Component {
   render() {
-    return <Main />;
+    return <ProducList />;
   }
 }
