@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { Text, View, Image } from "react-native";
-import Icon from "react-native-vector-icons/EvilIcons";
+import LinearGradient from "react-native-linear-gradient";
+import Header from "../components/common/Header";
 
-const { SCREEN_WIDTH, SCREEN_HEIGHT } = require("../../Utils/const");
-const logo = require("../../assets/images/logo_white.png");
+const {
+  SCREEN_WIDTH,
+  SCREEN_HEIGHT,
+  CARD_WIDTH_BIG,
+  CARD_HEIGHT_BIG
+} = require("../../Utils/const");
+const image = require("../../assets/images/item-01.png");
 const colors = {
   juneBad: "#C5D86D",
   jungleGreen: "#1B998B",
@@ -11,6 +17,7 @@ const colors = {
   orange: "#F46036",
   red: "#D7263D"
 };
+
 export default class Main extends Component {
   render() {
     return (
@@ -21,28 +28,58 @@ export default class Main extends Component {
           flex: 1
         }}
       >
+        <Header
+          primaryText="Bienvenue"
+          secondaryText="Salam Tidjini"
+          iconName="search"
+        />
+
         <View
           style={{
-            height: 50,
-            width: SCREEN_WIDTH,
+            height: CARD_HEIGHT_BIG,
+            width: CARD_WIDTH_BIG,
             backgroundColor: "#ccc",
-            flexDirection: "row",
-            justifyContent: "space-between"
+            alignSelf: "center",
+            borderRadius: 10,
+            position: "relative"
           }}
         >
-          <View
-            style={{ height: 50, marginLeft: 16, justifyContent: "center" }}
+          <Image
+            source={image}
+            style={{
+              height: CARD_HEIGHT_BIG,
+              width: CARD_WIDTH_BIG,
+              resizeMode: "cover",
+              borderRadius: 10
+            }}
+          />
+          <Text
+            style={{
+              position: "absolute",
+              paddingVertical: 5,
+              paddingHorizontal: 7,
+              borderRadius: 5,
+              margin: 16,
+              fontSize: 12,
+              fontWeight: "bold",
+              color: "#FFF",
+              backgroundColor: colors.orange
+            }}
           >
-            <Text style={{ fontSize: 11, color: "#0e0e0e99" }}>
-              Salam Tidjini
-            </Text>
-            <Text
-              style={{ fontSize: 22, fontWeight: "bold", color: "#0e0e0e" }}
-            >
-              Bienvenue
-            </Text>
-          </View>
-          <Icon name="search" size={36} />
+            Special
+          </Text>
+
+          <LinearGradient
+            colors={["#00000000", "#000000DD", "#000000"]}
+            style={{
+              width: CARD_WIDTH_BIG,
+              height: CARD_HEIGHT_BIG / 2,
+              position: "absolute",
+              bottom: 0
+            }}
+          >
+            <Text>50% off on sunglasses</Text>
+          </LinearGradient>
         </View>
       </View>
     );
